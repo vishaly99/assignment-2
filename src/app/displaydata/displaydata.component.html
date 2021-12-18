@@ -1,0 +1,26 @@
+<p>displaydata works!</p>
+<form  [formGroup]="userform"  (ngSubmit)="onSumbit()">
+    <label for="Name">Name</label>
+    <input type="text" name="name" formControlName="name" placeholder="Enter Your Name">
+    <span style="color: red;" *ngIf="name && name.invalid && name.touched">Name is required</span>
+    <br>
+    <label for="Email">Email</label>
+    <input type="text" name="email" formControlName="email" placeholder="Enter Your Email">
+    <span style="color: red;" *ngIf="email && email.invalid && email.touched">Email is Required</span>
+    <br>
+    <label for="Gender">Gender</label>
+    <input type="radio" name="gender" formControlName="gender" value="Male">Male
+    <input type="radio" name="gender" formControlName="gender" value="Female">Female
+    <span style="color: red;" *ngIf="gender && gender.invalid && gender.touched">Gender is Required</span>
+    <br>
+    <label for="City">City</label>
+    <select name="city" formControlName="city" id="city">
+        <option *ngFor="let cityy of citys" value="{{cityy.id}}">{{cityy.name}}</option>
+    </select>
+    <span style="color: red;" *ngIf="city && city.invalid && city.touched">City is Required</span>    
+    <br>
+    <label for="MobileNo">MobileNo</label>
+    <input type="text" name="mobileno" formControlName="mobileno" placeholder="Enter Your MobileNo">
+    <span style="color: red;" *ngIf="mobileno && mobileno.invalid && mobileno.touched">MobileNo is Required</span>
+    <button [disabled]="userform.invalid">Submit</button>
+</form>

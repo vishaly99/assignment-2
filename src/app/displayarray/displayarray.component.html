@@ -1,0 +1,16 @@
+<p>displayarray works!</p>
+<p>Array Data</p>
+<ul *ngFor="let item of data">
+    <li>{{item}}</li>
+</ul>
+<p>Array of Object Data</p>
+<div *ngFor="let item of dataobj">
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+    </table>
+</div>

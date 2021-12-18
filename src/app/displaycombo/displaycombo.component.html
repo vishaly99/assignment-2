@@ -1,0 +1,6 @@
+<p>displaycombo works!</p>
+<select name="department" id="department">
+    <option *ngFor="let dept of departments" [value]="dept.id">
+        {{dept.name}}
+    </option>
+</select>
